@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HelloWorldMyFriend</string>
+    <string name="Alex">Álex</string>
+    <string name="second_activity">Segunda Pantalla</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <!--Esto es una buena práctica porque en el caso de la reutilización de código, simplemente
+    tiraríamos de algo ya creado-->
+</resources>
