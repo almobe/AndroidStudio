@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
+    android:titleTextColor="@color/colorPrimaryDark"
+    >
+
+    <ImageView
+    android:id="@+id/logo_toolbar"
+    android:layout_width="155dp"
+    android:layout_height="55dp"
+    android:layout_marginLeft="0dp"
+        android:layout_gravity="left"
+        android:background="@drawable/logoapp" />
+    <!--
+    <TextView
+    android:id="@+id/titulo_toolbar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="@android:color/white"
+    android:text="Mis horarios"
+    android:textSize="24dp"
+    />-->
+    <Button
+        android:id="@+id/user_toolbar"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:background="@drawable/user_sinfondo"
+        android:layout_gravity="right"
+        android:layout_centerHorizontal="true"
+
+        />
+    <TextView
+        android:id="@+id/nombre_toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:text="Hola \nAlejandro"
+        android:layout_gravity="right"/>
+
+
+</android.support.v7.widget.Toolbar>

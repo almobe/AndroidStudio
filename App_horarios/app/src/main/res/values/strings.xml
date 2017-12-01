@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">App_horarios</string>
+    <string name="action_user">User</string>
+    <string name="nuevo_aplicacion">¿Eres nuevo por la aplicación?</string>
+    <string name="registrate">Regístrate</string>
+    <string name="nuevo_nada">¿De nuevo no tienes nada?</string>
+    <string name="inicia_sesion">Inicia sesión</string>
+    <string name="introduce_email">Introduce tu email</string>
+    <string name="email">E-mail</string>
+    <string name="introduce_password">Introduce tu contraseña</string>
+    <string name="password">Contraseña</string>
+    <string name="edit_nombre">Nombre</string>
+    <string name="edit_apellidos">Apellidos</string>
+    <string name="edit_password2">Repite contraseña</string>
+    <string name="intro_datos">Por favor introduce tus datos</string>
+    <string name="restaurante">Restaurante</string>
+    <string-array name="restaurantes_array">
+        <item>Sedaví</item>
+        <item>Alfafar</item>
+        <item>Xátiva</item>
+        <item>Alzira</item>
+    </string-array>
+    <string name="wait_authorization1">Solicitud enviada.</string>
+    <string name="wait_authorization2">Espera a que la gerencia de tu restaurante te autorice.</string>
+    <string name="wait_authorization3">Recibirás un email a la dirección adjuntada informándote del alta en nuestra app.</string>
+    <string name="wait_authorization4">Gracias.</string>
+
+
+
+
+
+
+
+</resources>
