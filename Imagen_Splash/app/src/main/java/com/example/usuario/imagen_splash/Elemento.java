@@ -1,0 +1,43 @@
+package com.example.usuario.imagen_splash;
+
+
+public class Elemento  {
+
+    //Variables de la clase Elemento
+    private String nombre;
+    private int imagen;
+    private int telefono;
+
+    //Constructor de la clase
+   public Elemento (String nombre, int imagen, int telefono){
+       this.nombre=nombre;
+       this.imagen=imagen;
+       this.telefono=telefono;
+    }
+
+    //GETTERS AND SETTERS
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(int imagen) {
+        this.imagen = imagen;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
+
+}
