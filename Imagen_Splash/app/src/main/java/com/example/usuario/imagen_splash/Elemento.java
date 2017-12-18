@@ -1,7 +1,10 @@
 package com.example.usuario.imagen_splash;
 
 
-public class Elemento  {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Elemento implements Parcelable {
 
     //Variables de la clase Elemento
     private String nombre;
@@ -40,4 +43,13 @@ public class Elemento  {
         this.telefono = telefono;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
+    }
 }

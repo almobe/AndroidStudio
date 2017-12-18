@@ -10,7 +10,7 @@ import java.util.TimerTask;
 public class SplashActivity extends AppCompatActivity {
 
     //Splash delay configurado a seis segundos
-    private long SPLASH_DELAY = 5000; //5 segundos
+    private long SPLASH_DELAY = 1000; //5 segundos
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

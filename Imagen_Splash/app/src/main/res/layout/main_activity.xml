@@ -1,28 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
-    <TextView
-        android:id="@+id/textView2"
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.example.usuario.imagen_splash.MyFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="Who you gonna call?"
-        android:textAlignment="center"
-        android:textSize="40dp" />
-
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/RECYCLER_VIEW"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentEnd="true"
-        android:scrollbars="vertical"/>
-
-
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        tools:layout="@layout/my_fragment"/>
 
 </LinearLayout>
