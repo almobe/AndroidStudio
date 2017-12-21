@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">QuickTrade</string>
+    <string name="edit_usuario">Nombre de usuario</string>
+    <string name="edit_nombre">Nombre</string>
+    <string name="edit_apellidos">Apellidos</string>
+    <string name="edit_correo">Correo electrónico</string>
+    <string name="edit_direccion">Dirección</string>
+    <string name="edit_contraseña">Password</string>
+    <string name="button_agregar">Agregar usuario</string>
+    <string name="button_modificar">Modificar usuario</string>
+    <string name="instrucciones_register">Introduce todos los datos</string>
+    <string name="button_productos">Mis productos</string>
+    <string name="button_productos_categoria">Productos por categoría</string>
+    <string name="button_productos_usuario">Productos por usuario</string>
+    <string name="button_usuario">Configuración de usuario</string>
+    <string name="nodo_usuarios">usuarios</string>
+    <string name="campo_nombre_usuario">nombre_usuario</string>
+    <string name="campo_nombre">nombre</string>
+    <string name="campo_apellidos">apellidos</string>
+    <string name="campo_correo">correo</string>
+    <string name="campo_direccion">direccion</string>
+    <string name="bienvenido">Bienvenido!!!</string>
+    <string name="nuevo">Eres nuevo en la app?</string>
+    <string name="viejo">No tienes ni un pelo de nuevo?</string>
+    <string name="login">login</string>
+    <string name="register">register</string>
+
+</resources>

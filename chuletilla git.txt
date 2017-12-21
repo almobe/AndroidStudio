@@ -1,0 +1,11 @@
+
+
+    Crear repositorio local: git init
+
+    Añadir ficheros y directorios: git add -A
+
+    Realizar commit local: git commit -m “Mensaje”
+
+    Crear enlace con repositorio remoto: git remote <etiqueta> <url>
+
+    Subir el commit al github: git push <etiqueta> master
