@@ -24,24 +24,7 @@
         android:inputType="textPersonName"
         android:hint="@string/edit_usuario" />
 
-    <EditText
-        android:id="@+id/editMailRegister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
 
-        android:inputType="textPersonName"
-        android:hint="@string/edit_correo" />
-
-    <EditText
-        android:id="@+id/editPasswordRegister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="@string/edit_contraseña" />
     <EditText
         android:id="@+id/editNombreRegister"
         android:layout_width="match_parent"
@@ -66,6 +49,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/edit_direccion" />
+
 
     <Button
         android:id="@+id/buttonRegisterRegister"

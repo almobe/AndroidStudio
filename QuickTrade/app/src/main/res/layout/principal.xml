@@ -11,7 +11,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:text="@string/button_productos" />
+        android:text="@string/button_nuevo_producto" />
 
     <Button
         android:id="@+id/buttonproductosusuario"
@@ -38,5 +38,5 @@
         android:layout_marginTop="50dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:text="@string/button_usuario" />
+        android:text="@string/button_modificar_producto" />
 </LinearLayout>

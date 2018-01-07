@@ -14,6 +14,7 @@
     <string name="button_productos_usuario">Productos por usuario</string>
     <string name="button_usuario">Configuración de usuario</string>
     <string name="nodo_usuarios">usuarios</string>
+    <string name="nodo_productos">productos</string>
     <string name="campo_nombre_usuario">nombre_usuario</string>
     <string name="campo_nombre">nombre</string>
     <string name="campo_apellidos">apellidos</string>
@@ -22,7 +23,22 @@
     <string name="bienvenido">Bienvenido!!!</string>
     <string name="nuevo">Eres nuevo en la app?</string>
     <string name="viejo">No tienes ni un pelo de nuevo?</string>
-    <string name="login">login</string>
+    <string name="login">Adelante</string>
     <string name="register">register</string>
+    <string name="button_nuevo_producto">Nuevo producto</string>
+
+    <string name="anyadir_producto">Añade un nuevo producto</string>
+    <string name="button_anyadir_producto">Añadir producto</string>
+    <string-array name="array_categorias">
+        <item>Tecnologia</item>
+        <item>Coches</item>
+        <item>Hogar</item>
+    </string-array>
+    <string name="button_modificar_producto">Modificar producto</string>
+    <string name="productos_usuario">Estos son los productos del usuario:</string>
+    <string name="productos_categoria">Estos son los productos de la categoría:</string>
+    <string name="modificar">Modifica o borra un producto</string>
+
+
 
 </resources>

@@ -17,6 +17,7 @@ public class usuarios {
     private String correo;
     private String direccion;
 
+
     public usuarios() {
 
     }
@@ -27,6 +28,7 @@ public class usuarios {
         this.apellidos = apellidos;
         this.correo = correo;
         this.direccion = direccion;
+
     }
 
     public String getNombre_usuario() {
@@ -69,17 +71,5 @@ public class usuarios {
         this.direccion = direccion;
     }
 
-    /**
-     * Created by USUARIO on 20/12/2017.
-     */
 
-    public static class Start extends AppCompatActivity {
-
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.start);
-
-        }
-    }
 }

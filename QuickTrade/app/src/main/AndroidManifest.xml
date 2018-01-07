@@ -19,10 +19,13 @@
         </activity>
 
         <activity android:name=".Register"></activity>
+        <activity android:name=".Register2"></activity>
         <activity android:name=".Login"></activity>
         <activity android:name=".Principal"></activity>
         <activity android:name=".MisProductos"></activity>
-       <!-- <activity android:name=".MainActivity"></activity>-->
+        <activity android:name=".PorUsuario"></activity>
+        <activity android:name=".PorCategoria"></activity>
+        <activity android:name=".Modificar"></activity>
     </application>
 
 </manifest>

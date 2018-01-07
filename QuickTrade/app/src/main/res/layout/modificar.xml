@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/modificar"
+        android:textSize="30dp"/>
+
+    <Spinner
+        android:id="@+id/spinner_producto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/editText_modificar_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Nombre"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editText_modificar_descripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Descripción"
+        android:inputType="textPersonName" />
+
+    <Spinner
+        android:id="@+id/spinner_modificar_categoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:entries="@array/array_categorias" />
+
+    <EditText
+        android:id="@+id/editText_modificar_precio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Precio"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/button_modificar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Modificar" />
+
+    <Button
+        android:id="@+id/button_borrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Borrar" />
+
+
+</LinearLayout>
