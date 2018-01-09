@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.usuario.imagen_splash.Fragment_Dinamico">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/imagen_dinamica"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/ghostbusters"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/nombre_dinamico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        />
+    <TextView
+        android:id="@+id/telefono_dinamico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Teléfono"
+        android:textSize="30dp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center"
+        />
+</LinearLayout>

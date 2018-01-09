@@ -13,53 +13,39 @@ import android.widget.Toast;
 import java.util.List;
 
 
-public class Adaptador extends RecyclerView.Adapter<Adaptador.ElementoViewHolder> {
+public class Adaptador extends RecyclerView.Adapter<Adaptador.ElementoViewHolder> implements View.OnClickListener {
 
     //ArrayList referente a los elementos que vamos metiendo en el Array
     private List<Elemento> listaElementos;
 
-    //INNER CLASS en la cual vamos a hacer referencia a los elementos y sus variables
-    //Accediendo a ellos a través del XML
-    public  class ElementoViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-
-        //Variables de la clase Elemento
-        public ImageView imagen;
-        public TextView nombre;
-        public ImageButton phone;
-
-        //Constructor ViewHolder que nos servirá
-        public ElementoViewHolder(View v){
-            super(v);
-            imagen = (ImageView) v.findViewById(R.id.imageViewRecycler);
-            nombre = (TextView) v.findViewById(R.id.textViewRecycler);
-            phone = (ImageButton) v.findViewById(R.id.imageButton);
-            phone.setOnClickListener(this);
-        }
-
-        //Método onClick implementado para definir las acciones que queremos que haga
-        @Override
-        public void onClick(View view) {
-            //Vamos a utilizar Toast, por un lado necesitamos saber el contexto
-            Context context=view.getContext();
-            //Por otro para saber a que elemento nos referimos tenemos que saber la posición en el adaptador
-            int position=getAdapterPosition();
-            //Por último aquí creamos el objeto elemento en base a la posición del elemento marcado
-            //en relación con el adaptador
-            Elemento elemento=listaElementos.get(position);
-
-            if  (elemento.getNombre()=="Ghostbusters"){
-                Toast toast = Toast.makeText(context,"Has tomado la mejor decisión. Llamando al número de teléfono : "+elemento.getTelefono(),Toast.LENGTH_LONG);
-                toast.show();
-            }else {
-                Toast toas = Toast.makeText(context, "Llamando al número de teléfono : " + elemento.getTelefono(), Toast.LENGTH_LONG);
-                toas.show();
-            }
-        }
-    }
+    //Objeto listener que declaramos e iniciaremos en el setOnclick
+    private View.OnClickListener listener;
 
     //Constructor del Adaptador
     public Adaptador(List<Elemento> lista){
         this.listaElementos=lista;
+    }
+
+    //Método para crear la vista "inflando" el layout list_items
+    @Override
+    public ElementoViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
+        RecyclerView.LayoutParams layParams = new RecyclerView.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        v.setLayoutParams(layParams);
+        //Implementamos el setOnclick sobre la vista
+        v.setOnClickListener(this);
+        return new ElementoViewHolder(v);
+    }
+
+    //Método para crear el ViewHolder, por un lado creamos el objeto element en base a su posición
+    //Tras esto, con los métodos setters le metemos a cada element un texto y una imagen en los elementos del
+    //RecyclerView
+    @Override
+    public void onBindViewHolder(ElementoViewHolder holder, int position) {
+        Elemento element = listaElementos.get(position);
+        holder.nombre.setText(element.getNombre());
+        holder.imagen.setImageResource(element.getImagen());
     }
 
     //Método que nos devuelve el número de items
@@ -68,23 +54,45 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ElementoViewHolder
         return this.listaElementos.size();
     }
 
-    //Método para crear la vista "inflando" el layout list_items
-    @Override
-    public ElementoViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
-        return new ElementoViewHolder(v);
+    //Método que pone en marcha el listener sobre los elementos o partes del RecyclerView
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener=listener;
     }
 
-    //Método para crear el ViewHolder, por un lado creamos el objeto element en base a su posición
-    //Tras esto, con los métodos setters le metemos a cada element un texto y una imagen
     @Override
-    public void onBindViewHolder(ElementoViewHolder holder, int position) {
-        Elemento element = listaElementos.get(position);
-        holder.nombre.setText(element.getNombre());
-        holder.imagen.setImageResource(element.getImagen());
+    public void onClick(View view) {
+        if (listener!=null){
+            listener.onClick(view);
+        }
     }
 
+    //INNER CLASS en la cual vamos a hacer referencia a los elementos y sus variables
+    //Accediendo a ellos a través del XML
+    public  class ElementoViewHolder extends RecyclerView.ViewHolder {
 
+        //Variables de la clase Elemento
+        public ImageView imagen;
+        public TextView nombre;
+        public ImageButton phone;
 
+        //Constructor ViewHolder que nos servirá par asignar a cada parte del layout su variable
+        public ElementoViewHolder(View v){
+            super(v);
+            imagen = (ImageView) v.findViewById(R.id.imageViewRecycler);
+            nombre = (TextView) v.findViewById(R.id.textViewRecycler);
+            phone = (ImageButton) v.findViewById(R.id.imageButton);
+        }
 
+    }
 }
+
+
+
+
+
+
+
+
+
+
+

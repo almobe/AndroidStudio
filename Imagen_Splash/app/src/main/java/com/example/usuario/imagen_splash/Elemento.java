@@ -4,7 +4,10 @@ package com.example.usuario.imagen_splash;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Elemento implements Parcelable {
+import java.io.Serializable;
+
+//Implementamos Serializable para poder transportar un objeto de la clase de un fragment a otro
+public class Elemento implements Serializable {
 
     //Variables de la clase Elemento
     private String nombre;
@@ -43,13 +46,5 @@ public class Elemento implements Parcelable {
         this.telefono = telefono;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-
-    }
 }

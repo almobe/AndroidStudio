@@ -1,5 +1,6 @@
 package com.example.usuario.imagen_splash;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,41 +18,65 @@ import java.util.List;
 
 public class MyFragment extends Fragment {
 
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+
+    private OnFragmentInteractionListener mListener;
+
     //Declaramos sin iniciar el RecyclerView, el Adapatador y el ArrayList
     RecyclerView rv;
     Adaptador ARVElemento;
-    private List<Elemento> elementos;
+    private ArrayList<Elemento> elementos;
 
+    //Referencia a la interface
+    IComunica_Fragments interfaceComunicaFragments;
 
+    //Crear referencia a Activity que nos va a permitir tener el contexto de nuestra app
+    Activity activity;
 
     public MyFragment() {
 
     }
 
+    public static MyFragment newInstance(String param1, String param2) {
+        MyFragment fragment = new MyFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.my_fragment, container, false);
-    }
+        //Cargamos el layout
+        View vista =inflater.inflate(R.layout.my_fragment, container, false);
 
-    //Pasamos la info que teníamos anteriormente en el MainActivity a este método del Fragment
-    public void onActivityCreated(Bundle saveInstanceState) {
-        super.onActivityCreated(saveInstanceState);
-
-
+        //Iniciamos ArrayList;
+        elementos = new ArrayList<>();
 
         //Iniciamos el objeto RecyclerView con el Recycler de la interfaz .xml
-        //Haciendo previamente un getActivity()
-        rv= (RecyclerView)getActivity().findViewById(R.id.RECYCLER_VIEW);
+        rv= (RecyclerView) vista.findViewById(R.id.RECYCLER_VIEW);
 
         //Creamos un objeto LinearLayoutManager, le decimos que tiene que ser vertical y se lo pasamos al RecyclerView
-        LinearLayoutManager lim = new LinearLayoutManager(getActivity());
+        LinearLayoutManager lim = new LinearLayoutManager(getContext());
         lim.setOrientation(LinearLayoutManager.VERTICAL);
         rv.setLayoutManager(lim);
 
@@ -59,12 +84,25 @@ public class MyFragment extends Fragment {
         data();
         inicializaAdaptador();
 
+        ARVElemento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(),"Seleccion: "+
+                        elementos.get(rv.
+                                getChildAdapterPosition(view)).getNombre(),Toast.LENGTH_SHORT).show();
+
+                //Enviamos el objeto personaje seleccionado con la interface como puente
+                interfaceComunicaFragments.enviarElemento(elementos.get(rv.getChildAdapterPosition(view)));
+            }
+        });
+
+
+        return vista;
     }
 
-    //Método que inicializa el ArrayList y en cual le pasamos los elementos que queremos que cree
-    //y que pase al RecyclerView
+    //Método en cual introducimos elementos en el ArrayList para pasárselos al Recycler
+    //Los vamos creando pasando datos al constructor de la clase Elemento
     public void data(){
-        elementos = new ArrayList();
 
         elementos.add(new Elemento("Ghost",R.drawable.greenghost,612345789));
         elementos.add(new Elemento("Iker Jimenez",R.drawable.iker,698745612));
@@ -86,19 +124,36 @@ public class MyFragment extends Fragment {
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
-
+        if (mListener != null) {
+            mListener.onFragmentInteraction(uri);
+        }
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
 
+        /*Si el contexto que está lllegando es una instancia de un activity...
+        ...voy a decirle a la actividad creada que sea igual a ese contexto...
+        ...y le vamos a decir al objeto de la interfaz que sea igual al contexto de la actividad
+        */
+        if (context instanceof Activity){
+            this.activity= (Activity) context;
+            interfaceComunicaFragments = (IComunica_Fragments) this.activity;
+        }
+
+        if (context instanceof Fragment_Dinamico.OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-
+        mListener = null;
     }
 
 
