@@ -63,6 +63,20 @@
                 android:hint="Precio"
                 android:inputType="textPersonName" />
 
+            <ImageView
+                android:id="@+id/imagen"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:tag="0" />
+
+            <Button
+                android:id="@+id/button_imagen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Añade imagen de la galería" />
+
             <Button
                 android:id="@+id/button_nuevo_producto"
                 android:layout_width="match_parent"
@@ -71,6 +85,7 @@
                 android:layout_marginRight="25dp"
                 android:layout_weight="1"
                 android:text="@string/button_anyadir_producto" />
+
         </LinearLayout>
     </ScrollView>
 
