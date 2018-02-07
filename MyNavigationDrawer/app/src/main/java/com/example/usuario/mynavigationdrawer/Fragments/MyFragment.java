@@ -84,6 +84,20 @@ public class MyFragment extends Fragment {
         lim.setOrientation(LinearLayoutManager.VERTICAL);
         rv.setLayoutManager(lim);
 
+        /*//Generamos Bundle para recibir el objeto
+        Bundle objetoElemento=getArguments();
+        Elemento elemento = null;
+
+        //Si el Bundle no está vacio
+        if(objetoElemento != null){
+
+            //El elemento será igual al que recibimos
+            elemento = (Elemento) objetoElemento.getSerializable("objeto");
+
+            //Método para asignar información en los elementos, información que recibimos del Bundle
+            elementos.add(elemento);
+        }*/
+
         //Llamamos a los métodos data() y incializaAdapatador()
         data();
         inicializaAdaptador();

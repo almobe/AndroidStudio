@@ -1,14 +1,22 @@
 package com.example.usuario.mynavigationdrawer.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.example.usuario.mynavigationdrawer.R;
+
+import java.io.File;
+
+import static android.app.Activity.RESULT_OK;
 
 
 /**
@@ -20,89 +28,81 @@ import com.example.usuario.mynavigationdrawer.R;
  * create an instance of this fragment.
  */
 public class FragmentCamara extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    //Iniciamos el botón dónde residirá la imagen que creemos
+    private ImageButton botonImagen;
 
-    private OnFragmentInteractionListener mListener;
+    //Integer que utilizaremos posteriormente
+    public final static int RESP_TOMAR_FOTO = 1000;
 
+    //Objeto Uri donde estará el Uri del objeto creado
+    private Uri mImageUri;
+
+    // Required empty public constructor
     public FragmentCamara() {
-        // Required empty public constructor
-    }
+   }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentCamara.
-     */
-    // TODO: Rename and change types and number of parameters
+    //Constructor con newInstance
     public static FragmentCamara newInstance(String param1, String param2) {
         FragmentCamara fragment = new FragmentCamara();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_camara, container, false);
+        final View v = inflater.inflate(R.layout.fragment_camara, container, false);
+        botonImagen = (ImageButton) v.findViewById(R.id.imageButton2);
+
+        botonImagen.setOnClickListener(new ImageButton.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+                //Archivo temporal donde guardaremos la fotografía que vamos a hacer
+                File photo = null;
+                try {
+                    // place where to store camera taken picture
+                    photo = FragmentCamara.createTemporaryFile("picture", ".jpg", getContext());
+
+                    photo.delete();
+                } catch (Exception e) {
+                    Log.v(getClass().getSimpleName(),
+                            "Can't create file to take picture!");
+                }
+
+                //Ruta del archivo
+                mImageUri = Uri.fromFile(photo);
+
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, mImageUri);
+                startActivityForResult(intent, RESP_TOMAR_FOTO);
+            }
+        });
+
+        return v;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+    public static File createTemporaryFile(String part, String ext,
+                                           Context myContext) throws Exception {
+        //Método de creación del archivo temporal
+        File tempDir = myContext.getExternalCacheDir();
+        tempDir = new File(tempDir.getAbsolutePath() + "/temp/");
+        if (!tempDir.exists()) {
+            tempDir.mkdir();
+        }
+        return File.createTempFile(part, ext, tempDir);
+    }
+
+    //Aquí implantamos la imagen en el imageButton
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == RESP_TOMAR_FOTO && resultCode == RESULT_OK) {
+            botonImagen.setImageURI(mImageUri);
         }
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);

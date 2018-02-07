@@ -1,5 +1,8 @@
 package com.example.usuario.mynavigationdrawer;
 
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +13,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.example.usuario.mynavigationdrawer.Fragments.FragmentCamara;
 import com.example.usuario.mynavigationdrawer.Fragments.FragmentMaps;
@@ -17,12 +21,21 @@ import com.example.usuario.mynavigationdrawer.Fragments.Fragment_Dinamico;
 import com.example.usuario.mynavigationdrawer.Fragments.MyFragment;
 import com.example.usuario.mynavigationdrawer.Model.Elemento;
 
+import static android.R.style.Theme;
+
 //En la declaración de la clase implementamos todos los fragments que vamos a utilizar
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, FragmentMaps.OnFragmentInteractionListener, FragmentCamara.OnFragmentInteractionListener, MyFragment.OnFragmentInteractionListener, Fragment_Dinamico.OnFragmentInteractionListener,IComunica_Fragments {
 
     //Declaramos el fragment dinámico para posteriormente iniciarlo y utilizarlo
     Fragment_Dinamico fragment_dinamico;
+
+    //MyFragment myFragment;
+
+    //Declaramos objeto de la clase MediaPlayer que crearemos para que suene un sonido al ejecutar la aplicación
+    MediaPlayer sonido;
+
+    private TextView texto;
 
     //El onCreate empezará con la llamada al layout activity_main y cargando el drawer_layout en un toolbar
     @Override
@@ -33,6 +46,8 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        texto= (TextView) findViewById(R.id.texto_bienvenida);
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -42,6 +57,11 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //Creamos el MediaPlayer en base a un sonido guardado en la carpeta raw
+        sonido = MediaPlayer.create(getApplicationContext(),R.raw.sonido2);
+        //Lo iniciamos para que suene
+        sonido.start();
     }
 
     @Override
@@ -96,7 +116,8 @@ public class MainActivity extends AppCompatActivity
         //Si el boleano es verdadero
         if (fragmentSeleccionado){
             //Cargamos el nuevo fragment en el content_main
-            getSupportFragmentManager().beginTransaction().replace(R.id.content_main, miFragment).commit();
+            texto.setText("");
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_main, miFragment).addToBackStack(null).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -125,4 +146,7 @@ public class MainActivity extends AppCompatActivity
         getSupportFragmentManager().beginTransaction().replace(R.id.content_main,fragment_dinamico).addToBackStack(null).commit();
         //el addToBackStack optimiza el reemplazo
     }
+
+
+
 }

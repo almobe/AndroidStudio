@@ -9,3 +9,5 @@
     Crear enlace con repositorio remoto: git remote <etiqueta> <url>
 
     Subir el commit al github: git push <etiqueta> master
+					     "
+					   github
