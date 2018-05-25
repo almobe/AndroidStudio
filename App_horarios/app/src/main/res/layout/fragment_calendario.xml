@@ -1,0 +1,151 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_light_background"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context="com.example.usuario.app_horarios.FragmentCalendario">
+
+    <!-- TODO: Update blajustesment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/peticion_horario"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30dp" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="@string/dia_restriccion"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etxt_fromdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:focusable="false"
+            android:textColorHint="@color/grey_hint"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:hint="@string/from" />
+
+        <EditText
+            android:id="@+id/etxt_todate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:focusable="false"
+            android:textColorHint="@color/grey_hint"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:hint="@string/untill" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="@string/restriction_hour"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20dp" />
+
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="@string/all_day"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etxt_fromhour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:focusable="false"
+            android:textColorHint="@color/grey_hint"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:hint="@string/from" />
+
+        <EditText
+            android:id="@+id/etxt_tohour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:focusable="false"
+            android:textColorHint="@color/grey_hint"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:hint="@string/untill" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="@string/reason"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/reason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:hint="@string/characters_max"
+        android:maxLength="100"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey_hint" />
+
+    <Button
+            android:id="@+id/button_subir_peticion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/colorAccent"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/petition_save"
+            android:textSize="20dp" />
+
+
+</LinearLayout>

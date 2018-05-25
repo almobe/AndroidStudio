@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cardview_light_background"
     android:orientation="vertical"
-    android:background="@color/colorPrimaryDark"
     tools:context="com.example.usuario.app_horarios.MainActivity">
 
 
@@ -13,44 +13,127 @@
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="130dp"
+        android:background="@color/colorPrimaryDark"
         app:srcCompat="@drawable/logoapp" />
 
     <TextView
-        android:id="@+id/textView_nuevo"
+        android:id="@+id/textEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/nuevo_aplicacion"
-        android:textColor="@android:color/background_light"
-        android:gravity="center"
-        android:layout_marginTop="80dp"
-        android:textSize="20dp"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/introduce_email"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20dp" />
 
-    <Button
-        android:id="@+id/button_register"
+    <EditText
+        android:id="@+id/editEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/registrate"
-        android:background="@color/colorAccent"
-        android:layout_margin="20dp"
-        android:textSize="20dp"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="@string/email"
+        android:textColorHint="@color/grey_hint"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/black" />
+
 
     <TextView
-        android:id="@+id/textView_viejo"
+        android:id="@+id/textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/nuevo_nada"
-        android:textColor="@android:color/background_light"
-        android:gravity="center"
-        android:layout_marginTop="50dp"
-        android:textSize="20dp"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/introduce_password"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20dp" />
 
-    <Button
-        android:id="@+id/button_login"
+    <EditText
+        android:id="@+id/editPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/inicia_sesion"
-        android:background="@color/colorAccent"
-        android:layout_margin="20dp"
-        android:textSize="20dp"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:textColorHint="@color/grey_hint"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textRecuperarContrasenya"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:autoLink="all"
+        android:gravity="center"
+        android:linksClickable="true"
+        android:text="@string/olvido_contrasenya"
+        android:textColor="@color/colorPrimaryDark"
+        tools:gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView_nuevo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:text="@string/nuevo_aplicacion"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/button_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@color/colorAccent"
+                android:text="@string/registrate"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView_viejo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:text="@string/nuevo_nada"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/button_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@color/colorAccent"
+                android:text="@string/inicia_sesion"
+                android:textSize="20dp" />
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>

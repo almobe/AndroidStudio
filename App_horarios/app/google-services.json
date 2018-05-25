@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "309143354078",
+    "firebase_url": "https://apphorarios-91b4f.firebaseio.com",
+    "project_id": "apphorarios-91b4f",
+    "storage_bucket": "apphorarios-91b4f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309143354078:android:cc7a41dbd507ce1e",
+        "android_client_info": {
+          "package_name": "com.example.usuario.app_horarios"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "309143354078-f0g689lmj3q9vuo2f78rkdcn0d189ke8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.usuario.app_horarios",
+            "certificate_hash": "6bfec62674d3c1c4b02ecf0880d8947ca85589a8"
+          }
+        },
+        {
+          "client_id": "309143354078-15af5g6qn2aed6k2g8l5c2550jl2c7rp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyKyBLji1ytkn1ihqf5b6tTyYJeb86nNU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "309143354078-15af5g6qn2aed6k2g8l5c2550jl2c7rp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

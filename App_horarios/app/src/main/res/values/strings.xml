@@ -15,6 +15,7 @@
     <string name="intro_datos">Por favor introduce tus datos</string>
     <string name="restaurante">Restaurante</string>
     <string-array name="restaurantes_array">
+        <item></item>
         <item>Sedaví</item>
         <item>Alfafar</item>
         <item>Xátiva</item>
@@ -22,13 +23,47 @@
     </string-array>
     <string name="wait_authorization1">Solicitud enviada.</string>
     <string name="wait_authorization2">Espera a que la gerencia de tu restaurante te autorice.</string>
-    <string name="wait_authorization3">Recibirás un email a la dirección adjuntada informándote del alta en nuestra app.</string>
+
     <string name="wait_authorization4">Gracias.</string>
+    <string name="wait_authorization3">Recibirás un email a la dirección adjuntada informándote del alta en nuestra app.</string>
+    <string name="actualiza_contrasenya">Introduce la contraseña que desees tener</string>
+    <string name="olvido_contrasenya">¿Olvidaste tu contraseña?</string>
+    <string name="modificar_datos_usu">Modificar datos de usuario</string>
+    <string name="modifica_nombre">Modifica tu nombre</string>
+    <string name="modifica_apellidos">Modifica tus apellidos</string>
+    <string name="modifica_restaurante">Modifica tu restaurante</string>
+    <string name="modifica_contrasenya">Modifica contraseña</string>
+    <string name="contrasenya_antigua">Contraseña antigua</string>
+    <string name="contrasenya_nueva">Contraseña nueva</string>
+    <string name="button_update">Actualiza</string>
+    <string name="peticion_horario">Haz tu petición de horario</string>
+    <string name="dia_restriccion">Día de la restricción</string>
+    <string name="from">desde</string>
+    <string name="restriction_hour">Hora de la restricción</string>
+    <string name="untill">hasta</string>
+    <string name="reason">Motivo</string>
+    <string name="characters_max">Máximo 100 carácteres</string>
+    <string name="petition_save">Guardar petición</string>
+    <string name="start_date">Fecha de entrada a la empresa Ej: 23/03/2004</string>
+    <string name="all_day">Todo el día </string>
+    <string name="petitions_history">Tu historial de peticiones</string>
 
 
 
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="nodo_empleados">empleados</string>
+    <string name="nodo_peticiones">peticiones</string>
 
 
 
+    <string name="campo_id">id</string>
+    <string name="acceso_por_empleado">Peticiones por empleado</string>
+    <string name="acceso_por_semana">Peticiones por semana</string>
+    <string name="configura_credenciales">Configuración de roles</string>
+    <string name="gerencia">Gerencia</string>
+    <string name="seleccion_empleado">Selecciona un empleado</string>
+    <string name="asciendeEmpleados">Da permisos de administrador</string>
+    <string name="button_logout">Cerrar sesión</string>
 
 </resources>
